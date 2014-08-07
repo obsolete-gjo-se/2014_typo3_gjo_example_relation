@@ -1,0 +1,53 @@
+<f:layout name="Default"/>
+
+<f:section name="main">
+
+    <table class="table table-hover">
+
+        <thead>
+        <tr class="warning">
+            <td colspan="6">Table: tx_gjoexamplerelation_domain_model_ownermanytooneuniperson ({ownerManyToOneUniPerson -> f:count()})</td>
+        </tr>
+        <tr>
+            <th><f:link.action action="addForm"><span class="glyphicon glyphicon-plus"></span></f:link.action>
+            </th>
+            <th>UID
+            </th>
+            <th>Label: stringWithoutBreak
+            </th>
+            <th>Detail
+            </th>
+            <th>Update
+            </th>
+            <th>Remove
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <f:for each="{ownerManyToOneUniPerson}" as="ownerManyToOneUniPersonValue">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    {ownerManyToOneUniPersonValue.uid}
+                </td>
+                <td>
+                    {ownerManyToOneUniPersonValue.stringWithoutBreak}
+                </td>
+                <td>
+                    <f:link.action action="show" arguments="{ownerManyToOneUniPerson : ownerManyToOneUniPersonValue}"><span class="glyphicon glyphicon-info-sign"></span></f:link.action>
+                </td>
+                <td>
+                    <f:link.action action="updateForm" arguments="{ownerManyToOneUniPerson : ownerManyToOneUniPersonValue}"><span class="glyphicon glyphicon-pencil"></span></f:link.action>
+                </td>
+                <td>
+                    <f:link.action action="remove" arguments="{ownerManyToOneUniPerson : ownerManyToOneUniPersonValue}"><span class="glyphicon glyphicon-trash"></span></f:link.action>
+                </td>
+            </tr>
+        </f:for>
+        </tbody>
+
+    </table>
+
+</f:section>
