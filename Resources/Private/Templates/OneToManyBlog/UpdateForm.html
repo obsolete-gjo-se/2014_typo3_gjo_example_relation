@@ -1,0 +1,29 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://fluidtypo3.org/schemas/fluid-master.xsd"
+     xmlns:v="http://fluidtypo3.org/schemas/vhs-master.xsd">
+
+    <f:layout name="Default" />
+
+    <f:section name="main">
+
+        <v:var.set name="form" value="updateForm" />
+        <v:var.set name="action" value="update" />
+        <v:var.set name="object" value="{blog}" />
+
+        <h3>Table: tx_gjoexamplerelation_domain_model_ownermanytooneuniperson</h3>
+
+        <f:render partial="FormErrors" arguments="{form:'{form}'}" />
+
+        <f:form action="{action}" name="{form}" object="{object}" class="form-horizontal" additionalAttributes="{role: 'form'}">
+
+            <f:render partial="FormFields/Title" arguments="{form:'{form}'}" />
+
+            <f:form.submit value="Add DataType Example"/>
+
+        </f:form>
+
+    </f:section>
+
+</div>

@@ -1,0 +1,38 @@
+<f:layout name="default"/>
+
+<f:section name="main">
+
+    <h1>Blog ansehen</h1>
+
+    <dl class="dl-horizontal">
+        <dt>Blog-Titel:</dt>
+        <dd>{blog.title}</dd>
+    </dl>
+
+    <f:if condition="{blog.postsCounter}">
+        <ul class="list-group">
+            <f:for each="{blog.postsCounter}" as="post">
+                <li class="list-group-item">{post.title}
+                    <f:link.action action="remove" controller="OneToManyPost" arguments="{blogObject : blog, postObject : post}"
+                                   class="btn btn-primary btn-xs pull-right">DEL
+                    </f:link.action>
+                    <f:link.action action="updateForm" controller="OneToManyPost" arguments="{blogObject : blog, postObject : post}"
+                                   class="btn btn-primary btn-xs pull-right margin-right">EDIT
+                    </f:link.action>
+                    <f:link.action action="show" controller="OneToManyPost" arguments="{blogObject : blog, postObject : post}"
+                                   class="btn btn-primary btn-xs pull-right margin-right">SHOW
+                    </f:link.action>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+
+
+    <f:link.action action="addForm" controller="OneToManyPost" arguments="{blogObject:blog}" class="btn btn-primary">Post anlegen</f:link.action>
+
+    <br/><br/>
+
+    <f:link.action action="findAll" class="btn btn-primary">Zurück zur Blog-Liste</f:link.action>
+
+
+</f:section>

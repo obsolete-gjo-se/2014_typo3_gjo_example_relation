@@ -1,0 +1,16 @@
+<f:layout name="default" />
+
+<f:section name="main">
+
+	<h1>Post ansehen (Blog: {blog.title})</h1>
+
+	<dl class="dl-horizontal">
+		<dt>Post-Titel:</dt>
+		<dd>{post.title}</dd>
+		<dt>Post-Inhalt:</dt>
+		<dd>Hier würde dann der Inhalt zum Post stehen</dd>
+	</dl>
+
+	<f:link.action action="show" controller="OneToManyBlog" arguments="{blogObject : blog}" class="btn btn-primary">Zurück zur Blog-Liste</f:link.action>
+
+</f:section>

@@ -6,3 +6,9 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
     'ManyToOneUniPlugin',
     'ManyToOneUniPlugin Default'
 );
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    'Gjo.' . $_EXTKEY,
+    'OneToManyPlugin',
+    'OneToManyPlugin Default'
+);

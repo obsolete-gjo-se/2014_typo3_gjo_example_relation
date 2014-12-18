@@ -5,9 +5,22 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
     'Gjo.' . $_EXTKEY,
     'ManyToOneUniPlugin',
     array(
-        'ManyToOneUni' => 'findAll, show, addForm, add, updateForm, update, remove'
+        'OwnerManyToOneUniPerson' => 'findAll, show, addForm, add, updateForm, update, remove'
     ),
     array(
-        'ManyToOneUni' => 'findAll, show, addForm, add, updateForm, update, remove'
+        'OwnerManyToOneUniPerson' => 'findAll, show, addForm, add, updateForm, update, remove'
+    )
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Gjo.' . $_EXTKEY,
+    'OneToManyPlugin',
+    array(
+        'OneToManyBlog' => 'findAll, show, addForm, add, updateForm, update, remove',
+        'OneToManyPost' => 'show, addForm, add, updateForm, update, remove'
+    ),
+    array(
+        'OneToManyBlog' => 'findAll, show, addForm, add, updateForm, update, remove',
+        'OneToManyPost' => 'show, addForm, add, updateForm, update, remove'
     )
 );
